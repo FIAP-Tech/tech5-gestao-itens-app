@@ -1,5 +1,5 @@
 server:
-    port: ${PORT:8080}
+    port: ${PORT:8081}
 
 spring:
     datasource:
@@ -24,3 +24,28 @@ spring:
             date: yyyy-MM-dd
             date-time: yyyy-MM-dd HH:mm:ss
             time: HH:mm:ss
+
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:8090/realms/step5
+
+jwt:
+    auth:
+        converter:
+            resource-id: step5-rest-api
+            principle-attribute: preferred_username
+
+
+logging:
+    level:
+        org.springframework.security: TRACE
+
+
+sonar:
+    projectKey: tech5-gestao-itens-app
+    projectName: tech5-gestao-itens-app
+    host:
+        url: http://localhost:9090
+    token: sqp_a94064a95ad7a0042f782c0ed56f78e98cbeecfa
