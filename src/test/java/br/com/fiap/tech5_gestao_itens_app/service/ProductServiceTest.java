@@ -1,15 +1,13 @@
-package br.com.fiap.produtos.service;
+package br.com.fiap.tech5_gestao_itens_app.service;
 
-import br.com.fiap.produtos.dto.ProductRequest;
-import br.com.fiap.produtos.dto.ProductResponse;
-import br.com.fiap.produtos.model.Product;
-import br.com.fiap.produtos.repository.ProductRepository;
+import br.com.fiap.tech5_gestao_itens_app.dto.ProductRequest;
+import br.com.fiap.tech5_gestao_itens_app.dto.ProductResponse;
+import br.com.fiap.tech5_gestao_itens_app.model.Product;
+import br.com.fiap.tech5_gestao_itens_app.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigDecimal;
