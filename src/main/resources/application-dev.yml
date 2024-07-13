@@ -29,5 +29,5 @@ spring:
       time: HH:mm:ss
 
 #logging:
- # level:
-  #  org.springframework.security: TRACE
+#  level:
+#    org.springframework.security: TRACE
