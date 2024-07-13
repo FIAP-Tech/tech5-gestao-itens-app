@@ -2,6 +2,7 @@ FROM azul/zulu-openjdk-alpine:21
 ENV DATASOURCE_URL DATASOURCE_URL
 ENV DATASOURCE_USERNAME DATASOURCE_USERNAME
 ENV DATASOURCE_PASSWORD DATASOURCE_PASSWORD
+ENV ISSUER_URI ISSUER_URI
 EXPOSE 8081
-COPY target/*.jar gestao-itens-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/gestao-itens-0.0.1-SNAPSHOT.jar"]
+COPY target/*.jar tech5-gestao-itens-app-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/tech5-gestao-itens-app-0.0.1-SNAPSHOT.jar"]

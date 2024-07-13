@@ -1,4 +1,4 @@
-package br.com.fiap.produtos;
+package br.com.fiap.tech5_gestao_itens_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -19,7 +19,7 @@ public class TestprodutosAppApplication {
 
 
 	public static void main(String[] args) {
-		SpringApplication.from(GestaoItensApplication::main).with(TestprodutosAppApplication.class).run(args);
+		SpringApplication.from(ProdutosAppApplication::main).with(TestprodutosAppApplication.class).run(args);
 	}
 
 }
