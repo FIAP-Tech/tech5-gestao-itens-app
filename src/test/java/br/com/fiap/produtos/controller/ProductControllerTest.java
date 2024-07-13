@@ -1,8 +1,8 @@
-package br.com.fiap.tech5_gestao_itens_app.controller;
+package br.com.fiap.produtos.controller;
 
-import br.com.fiap.tech5_gestao_itens_app.dto.ProductRequest;
-import br.com.fiap.tech5_gestao_itens_app.dto.ProductResponse;
-import br.com.fiap.tech5_gestao_itens_app.service.ProductService;
+import br.com.fiap.produtos.dto.ProductRequest;
+import br.com.fiap.produtos.dto.ProductResponse;
+import br.com.fiap.produtos.service.ProductService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

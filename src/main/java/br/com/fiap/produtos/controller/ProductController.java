@@ -15,14 +15,11 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("/api/produtos")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
 public class ProductController {
 
     private final ProductService productService;
 
     private static final Logger logger = Logger.getLogger(ProductController.class.getName());
-
-
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -35,7 +32,6 @@ public class ProductController {
     @PreAuthorize("hasRole('ADMIN')")
     public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
-
     }
 
     @GetMapping("/{id}")
@@ -54,7 +50,6 @@ public class ProductController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProduct(@PathVariable("id") Long id) {
         productService.deleteProduct(id);
-
     }
 
     @PostMapping("/{idProduto}/atualizar-estoque")
@@ -63,5 +58,4 @@ public class ProductController {
                 .map(order -> ResponseEntity.ok("Estoque atualizado com Sucesso"))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-
 }

@@ -1,9 +1,9 @@
-package br.com.fiap.tech5_gestao_itens_app.service;
+package br.com.fiap.produtos.service;
 
-import br.com.fiap.tech5_gestao_itens_app.dto.ProductRequest;
-import br.com.fiap.tech5_gestao_itens_app.dto.ProductResponse;
-import br.com.fiap.tech5_gestao_itens_app.model.Product;
-import br.com.fiap.tech5_gestao_itens_app.repository.ProductRepository;
+import br.com.fiap.produtos.dto.ProductRequest;
+import br.com.fiap.produtos.dto.ProductResponse;
+import br.com.fiap.produtos.model.Product;
+import br.com.fiap.produtos.repository.ProductRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
