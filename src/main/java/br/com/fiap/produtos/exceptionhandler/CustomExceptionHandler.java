@@ -1,6 +1,5 @@
 package br.com.fiap.produtos.exceptionhandler;
 
-import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
