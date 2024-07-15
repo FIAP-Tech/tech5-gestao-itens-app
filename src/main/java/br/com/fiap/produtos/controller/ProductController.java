@@ -5,7 +5,6 @@ import br.com.fiap.produtos.dto.ProductResponse;
 import br.com.fiap.produtos.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,13 +22,13 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
     public ProductResponse createProduct(@RequestBody ProductRequest productRequest) {
         return productService.createProduct(productRequest);
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasRole('ADMIN')")
     public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
     }
@@ -42,20 +41,15 @@ public class ProductController {
 
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String updateProduct(@PathVariable("id") Long id, @RequestBody ProductRequest productRequest) {
         return productService.updateProduct(id, productRequest);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasRole('ADMIN')")
     public void deleteProduct(@PathVariable("id") Long id) {
         productService.deleteProduct(id);
-    }
-
-    @PostMapping("/{idProduto}/atualizar-estoque")
-    public ResponseEntity<String> atualizarEstoqueProduto(@PathVariable Long idProduto, @RequestParam Integer quantidadeVendida) {
-        return productService.atualizarEstoqueProduto(idProduto, quantidadeVendida)
-                .map(order -> ResponseEntity.ok("Estoque atualizado com Sucesso"))
-                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
